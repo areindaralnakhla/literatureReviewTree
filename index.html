@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Behavior Factors Tree</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Variables Affecting Human Behavior/Response in VR</h1>
+        <div class="controls">
+            <button id="findLitBtn" class="toggle-btn">Find Literature</button>
+            <button id="zoomInBtn">+ Zoom In</button>
+            <button id="zoomOutBtn">- Zoom Out</button>
+            <button id="resetBtn">Reset</button>
+            <span class="zoom-level" id="zoomLevel">100%</span>
+        </div>
+    </div>
+    
+    <div class="tree-container" id="treeContainer">
+        <svg id="treeSvg" class="tree-svg"></svg>
+        <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <!-- Literature overlay -->
+    <div id="literatureOverlay" class="literature-overlay">
+        <div class="overlay-content">
+            <div class="overlay-header">
+                <h2 id="overlayTitle">Literature</h2>
+                <button id="closeOverlay" class="close-btn">&times;</button>
+            </div>
+            <div id="literatureList" class="literature-list">
+                <!-- Literature entries will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="tree-data.js"></script>
+    <script src="literature-data.js"></script>
+    <script src="tree-renderer.js"></script>
+</body>
+</html>

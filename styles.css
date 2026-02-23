@@ -1,0 +1,341 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 15px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
+    flex: 1;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+button {
+    padding: 8px 16px;
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    font-size: 13px;
+}
+
+button:hover {
+    background: #764ba2;
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button.active {
+    background: #43e97b;
+    box-shadow: 0 0 0 3px rgba(67, 233, 123, 0.3);
+}
+
+.toggle-btn {
+    position: relative;
+}
+
+.toggle-btn.active {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    box-shadow: 0 2px 8px rgba(16, 185, 129, 0.3);
+}
+
+.toggle-btn.active::before {
+    content: '✓ ';
+}
+
+.zoom-level {
+    min-width: 50px;
+    text-align: right;
+    color: #666;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.tree-container {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f5f7fa 0%, #f0f0f0 100%);
+    cursor: grab;
+}
+
+.tree-container.dragging {
+    cursor: grabbing;
+}
+
+.tree-svg {
+    width: 100%;
+    height: 100%;
+    user-select: none;
+}
+
+.tooltip {
+    display: none;
+    position: fixed;
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 12px;
+    max-width: 280px;
+    font-size: 12px;
+    color: #333;
+    line-height: 1.5;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    pointer-events: none;
+    z-index: 1000;
+    white-space: normal;
+    word-wrap: break-word;
+    backdrop-filter: blur(2px);
+}
+
+/* Literature overlay */
+.literature-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.literature-overlay.visible {
+    display: flex;
+}
+
+.overlay-content {
+    background: white;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.overlay-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.overlay-header h2 {
+    margin: 0;
+    color: #333;
+    font-size: 22px;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #999;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.close-btn:hover {
+    background: #f0f0f0;
+    color: #333;
+    transform: none;
+}
+
+.literature-list {
+    overflow-y: auto;
+    padding: 20px;
+    flex: 1;
+}
+
+.lit-entry {
+    padding: 16px;
+    margin-bottom: 12px;
+    background: #f9f9f9;
+    border-left: 4px solid #667eea;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.lit-entry:hover {
+    background: #f0f0f0;
+    border-left-color: #43e97b;
+    transform: translateX(4px);
+}
+
+.lit-entry h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.lit-entry .citation {
+    color: #666;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.lit-entry .authors {
+    color: #888;
+    font-size: 12px;
+    margin-bottom: 4px;
+}
+
+.lit-entry .doi-link {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 12px;
+    display: inline-block;
+    margin-top: 8px;
+}
+
+.lit-entry .doi-link:hover {
+    text-decoration: underline;
+    color: #43e97b;
+}
+
+.lit-citation {
+    font-size: 13px;
+    color: #666;
+    margin: 6px 0;
+}
+
+.lit-publisher {
+    font-size: 12px;
+    color: #888;
+    font-style: italic;
+    margin-top: 2px;
+}
+
+.lit-entry .tags {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.lit-tag {
+    background: #e0e7ff;
+    color: #4f46e5;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 500;
+}
+.lit-notes {
+    margin-top: 12px;
+    padding: 10px;
+    background: #f9fafb;
+    border-left: 3px solid #667eea;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #444;
+    line-height: 1.5;
+    font-style: italic;
+}
+.no-literature {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
+}
+
+.lit-count-badge {
+    font-size: 9px;
+    font-weight: bold;
+    fill: white;
+    pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .controls {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .tree-container {
+        top: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 18px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .controls {
+        gap: 5px;
+    }
+}
