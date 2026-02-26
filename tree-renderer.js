@@ -556,6 +556,37 @@ class TreeDiagram {
                     notes.textContent = lit.notes;
                     entry.appendChild(notes);
                 }
+
+                if (lit.methodologyTakeaway) {
+                    const takeaway = document.createElement('div');
+                    takeaway.className = 'lit-takeaway';
+
+                    const takeawayTitle = document.createElement('div');
+                    takeawayTitle.className = 'lit-takeaway-title';
+                    takeawayTitle.textContent = 'How we apply this in our paper';
+
+                    const takeawayList = document.createElement('ol');
+                    takeawayList.className = 'lit-takeaway-list';
+
+                    const takeawayItems = Array.isArray(lit.methodologyTakeaway)
+                        ? lit.methodologyTakeaway
+                        : String(lit.methodologyTakeaway)
+                            .split(/\r?\n+/)
+                            .map(item => item.trim())
+                            .filter(Boolean);
+
+                    takeawayItems.forEach(itemText => {
+                        const item = document.createElement('li');
+                        item.textContent = itemText;
+                        takeawayList.appendChild(item);
+                    });
+
+                    if (takeawayItems.length > 0) {
+                        takeaway.appendChild(takeawayTitle);
+                        takeaway.appendChild(takeawayList);
+                        entry.appendChild(takeaway);
+                    }
+                }
                 
                 listContainer.appendChild(entry);
             });

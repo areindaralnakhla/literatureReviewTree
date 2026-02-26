@@ -287,7 +287,43 @@ button.active {
     color: #444;
     line-height: 1.5;
     font-style: italic;
+    white-space: pre-line;
 }
+
+.lit-takeaway {
+    margin-top: 12px;
+    padding: 10px;
+    background: #eefdf5;
+    border-left: 3px solid #10b981;
+    border-radius: 4px;
+}
+
+.lit-takeaway-title {
+    font-size: 12px;
+    font-weight: 700;
+    color: #047857;
+    margin-bottom: 6px;
+}
+
+.lit-takeaway-list {
+    list-style: decimal;
+    list-style-position: outside;
+    padding-left: 20px;
+    margin: 0;
+    color: #444;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.lit-takeaway-list li {
+    margin-bottom: 4px;
+    white-space: pre-line;
+}
+
+.lit-takeaway-list li:last-child {
+    margin-bottom: 0;
+}
+
 .no-literature {
     text-align: center;
     padding: 40px;

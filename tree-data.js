@@ -292,6 +292,8 @@ const treeData = {
                                     children: [
                                         { id: 'presence', label: 'Sense of\nPresence', info: 'Subjective sense of "being there" in the virtual environment.' },
                                         { id: 'embodiment', label: 'Embodiment', info: 'Sense of owning and controlling a virtual body.' },
+                                        { id: 'copresence', label: 'Copresence', info: 'Sense of being together with others in the virtual environment.' },
+                                        { id: 'Immersion', label: 'Immersion', info: 'Objective level of sensory fidelity and system immersion (relies heavily on hardware and software quality inside internal factors).' },
                                         { id: 'reality-judgment', label: 'Reality\njudgment', info: 'Judgment of how real the virtual experience seems.' },
                                         { id: 'flow-state', label: 'Flow state', info: 'State of optimal engagement where challenge matches skill.' }
                                     ]
