@@ -15,9 +15,9 @@ const literatureDatabase = [
         link: "https://publicationslist.org/data/melslater/ref-22/representation%20systems%20etc.pdf",
         tags: ["internal-factors", "external-factors"],
         notes: `This is the paper that help me finally decouple factors.
-    Slater, with the help of previous literature from the late 90s, classifies factors that affect human behavior in VR.
-    Even though the experiment he conducted based on NLP is probably obsolete, and considering the technology now, it is not too strong to indicate much about presence.
-    So I only take the theoretical part of the paper, which is the classification of factors into two main categories: internal and external.`,
+        Slater, with the help of previous literature from the late 90s, classifies factors that affect human behavior in VR.
+        Even though the experiment he conducted based on NLP is probably obsolete, and considering the technology now, it is not too strong to indicate much about presence.
+        So I only take the theoretical part of the paper, which is the classification of factors into two main categories: internal and external.`,
         methodologyTakeaway: ``
     },
     {
@@ -30,9 +30,9 @@ const literatureDatabase = [
         link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11852960/",
         tags: ["attention-focus", "embodiment", "task-structure", "stimulus-design"],
         notes: `This was a comprehensive systematic review of approach-avoidance in 'ecologically valid enviornemnts; so either real setups or in VR'.
-    The review collected 413 and ended up with 14 after the screening process.
-    It highlights the limitations, and faliures of the current literature, theres always either task is not well designed, stimulus is not well designed, embodied response is not natural, the N is too small.
-    Then offers discussion for important considerations and future opportunities for this research, so i have to reread it to not do the same mistakes.`,
+        The review collected 413 and ended up with 14 after the screening process.
+        It highlights the limitations, and faliures of the current literature, theres always either task is not well designed, stimulus is not well designed, embodied response is not natural, the N is too small.
+        Then offers discussion for important considerations and future opportunities for this research, so i have to reread it to not do the same mistakes.`,
         methodologyTakeaway: ``
     },
     {
@@ -45,9 +45,9 @@ const literatureDatabase = [
         link: "http://www.philipcorr.net/uploads/downloads/270.pdf",
         tags: ["personality", "motivational-state", "stimulus-properties", "attention-focus"],
         notes: `This chapter from the book 'Neuroimaging Perconality, Social Cognition, and Character' was very informative and helped me understand approach-avoidance frome a neurobiological (objective) perspective rather than the theoretical, philisophical only, and frankly messy description of J Elliot's.
-    Besides explaining goals and motivation in simple organisms and then more complex ones like rats and humans, it mentions many important properties of a stimulus that I should be aware of; its not just valence, but valuation differences, transience, etc., all with useful examples.
-    Additionally and more importantly it explains personality's huge impact on the nature of approach-avoidance systems and their activations intensity, as well as the different ways to measure such stable traits.
-    It elaborates on two personalities from the Big Five: extraversion and neuroticism, and how they are related to approach-avoidance which is to be considered in my analysis.`,
+        Besides explaining goals and motivation in simple organisms and then more complex ones like rats and humans, it mentions many important properties of a stimulus that I should be aware of; its not just valence, but valuation differences, transience, etc., all with useful examples.
+        Additionally and more importantly it explains personality's huge impact on the nature of approach-avoidance systems and their activations intensity, as well as the different ways to measure such stable traits.
+        It elaborates on two personalities from the Big Five: extraversion and neuroticism, and how they are related to approach-avoidance which is to be considered in my analysis.`,
         methodologyTakeaway: ``
     },
     {
@@ -110,17 +110,67 @@ const literatureDatabase = [
         link: "https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2022.914392/full",
         tags: ["presence", "embodiment", "copresence"],
         notes: `Slater clarifies factors to presence by seperating it into two: the place illusion (PI) and plausability illusion (Psi).
-    He also talks about Embodiment (the next node in our tree) as the illusion of ownership over thr virtual body.
-    A 4th illusion is Copresence which is the belief of being together with other people in teh virtual enviornment.
-    So, to summerize so far: Presence (PI and Psi), Embodiment, and Copresence.
-    Then he gives us a nice overview of the diverse methods to measuing Presence, obviously either through subjective (questionnaires) or objective (physiological, behavioral) measures, and the importance of using both.
-    He also says says the measuiring presence is not the only way assess the user's response to virtual reality experience, and therefore proposes the idea of taking participants preference instead through what he calls "sentiment analysis"'
-    Point out also the plausability is the most complex and interesting illusion which we should pay attention to.`,
+        He also talks about Embodiment (the next node in our tree) as the illusion of ownership over thr virtual body.
+        A 4th illusion is Copresence which is the belief of being together with other people in teh virtual enviornment.
+        So, to summerize so far: Presence (PI and Psi), Embodiment, and Copresence.
+        Then he gives us a nice overview of the diverse methods to measuing Presence, obviously either through subjective (questionnaires) or objective (physiological, behavioral) measures, and the importance of using both.
+        He also says says the measuiring presence is not the only way assess the user's response to virtual reality experience, and therefore proposes the idea of taking participants preference instead through what he calls "sentiment analysis"'
+        Point out also the plausability is the most complex and interesting illusion which we should pay attention to.`,
         methodologyTakeaway: `For us behavioral measure of response is non debatable (core element). As for measure presence, do they mention a method using behavioral data?
         Since a combination of measures is always better, we need to decide between subjective (exhasting) or phsyioloigcal (special hardware and expensive and needs data analysis expertise) as the second measurement method.
         If we opt for subjective, which questionnaire should we use? Which one is the most used and validated? that includes both illusions (Psi and Pi). 
         Does it meantion embodiement measure? Copresence not important since our study is with signle user.
         Decide whether to include sentiment analysis as a measure of user preference, and if so, how to implement it effectively?
+        `
+    },
+    {
+        id: 7,
+        title: "How immersive is enough? A meta-analysis of the effect of immersive technology on user presence",
+        authors: "Cummings, J. J., Bailenson, J. N.",
+        year: 2016,
+        publisher: "Taylor & Francis",
+        doi: "",
+        link: "",
+        tags: ["presence", "immersion"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 8,
+
+
+    },
+    {
+        id: 10,
+        title: "A psychophysical experiment regarding components of the plausibility illusion",
+        authors: "Skarbez, R., Neyret, S., Brooks, F. P., Slater, M., Whitton, M. C.",
+        year: 2017,
+        publisher: "IEEE",
+        doi: "",
+        link: "",
+        tags: ["presence", "plausibility-illusion"],
+        notes: `They reinforce my initial understanding before even reading the literature that when one experineces a perfect VR envronment (or as they say "PI and Psi" and therefore presence), one should also respond realisticly to stimuli from teh virtual scenario.
+        In the literature, any works examining the system characteristics or its SCs would be on immersion and therefore PI, but when it comes to Psi which seems less studies and mastered, in the literature we will encounter "coherence" which refers to the factors contributing to Psi (Skarbez, 2015)
+        Broadly, system characteristics that contribute to Psi are: behavior of vistual humans in the enviornment, behavior of physical objects in the environment, and the like. 
+        Rovira et al., in 2009 also, say that an env. must satisfy three reqs: (1) It must be correlational (the actions of the user elicit responses from the env.), (2) It must be self-referential (there must be elements of the scenario that refer directly to the user), (3) It must be credibile (the. behavior of the env. must be consistent with the user's prior knowledge).
+        The experiment wentr as follows": participants were placed in the system configuration with the highest level of immersion, instrtucted to remember their feeling of Psi, and then match whichever feeling they were instructed to remember by choosing transitions from lower-to-higher quality congigurations.
+        They varied the following coherence factors:  the coherence of virtual human behavior (VH), the behavior of one’s own virtual body (VB), the coherence of physical interactions in the VE (P), and the scenario coherence (S). A given configuration is denonted by a vector C = {VH,VB, P, S}
+        Their results examined: accepted configurations (they show probability of each configuration being accepted if reached and the percentage of it being accepted of the total configurations that were accepted), the transitions (and for that they conduct a transition probability matrix from the orders of configurations chosen by each participant and the show the most likely path of transition using markov chain) and finally questionnaire results were included in the discussion.
+        They saw patterns between males vs females. They did Fisher's exact test here.
+        They split the two group as having high vs low presence based on the questionnaire results (likert scale 0-2 vs 3-7) and saw that all people who reported high presense had the ball interaction at level 2 while the others had the ball at 0 or 1. Couldn't say for certain if that was causation or correlation and if the later then in what direction. However they speculated that the playing with the ball more extensively lead to more more engagement engagement within the scenario and therefore felt more present.
+        `,
+        methodologyTakeaway: `According their experiment's results, the Psi factors in terms of ordered importance are: (1) quality of avatar behavior/ own body [VB], (2) correspondance between scenario and the visual apparance of the enviornment [S], (3) behavior of other virtual humans in the environment [VH], (4) the physical behavior of objects in the environment [P].
+        They use a post experiment questionnaire: "a modified version of Slater-Usoh-Steed (SUS) presence questionnate", is it the most suitable for Psi according to slater, 2022 paper.
+        It's important to look at the procedure of other experiemnts before starting out own, for those it was: Consent form -> demographics questionnaire -> informed verbally and on paper about the ability to withdraw at any time without giving any reasons -> optitrack and calibration procedure -> began the experiment (started with the maximum level of all the factors: the highest level of coherence) -> post experiment questionnaire
+        Also what to tell the participants in the beginning of the experiment is essential and might affect so many internal factors. Our initial instuctions should be chose carefullu, for example for this exp.:
+        At the start, participants were adviced to walk around the room and describe what they see, move their body and observe it in teh mirror, to establish a sense of embodiment, instructed to play with the ball between their feet.. they were asked to focus on the sensation of reality, they show them levels of each factor in a specific order, then they can begin the experiment.
+        They were told that the they would be playing a game in which the goal was to reach the optimal sensation of reality they experienced at the beginning of the experience and that they would earn five points each time they would reach this level of reality.....
+        Participants started the experiemnt with random configurations (refer to this study for randomization strategy and figures). Essentially each participnt had 8 trails {0,0,0,0}, {1,0,0,0}, {0,1,0,0}, {0,0,1,0}, {0,0,0,1}, and three random ones used from the 10 possibilities where a chnage was already made. Each trial was given the changce to be improve to real to the "optimial sensation of reality" using 6 changes which had to be incrimental. And they had to declare which next factor they wanted to improve. 
+        They made the assumption that each trial is statistically independent, even though they know this is not teh case because participants develop knowledge over time regarding which factor has more priority. For us, we consider this as a weakness and hope to not make such assumption if our experiment design is strong.
+        We can modify known questionnaires to fit out experiemnts. 
+        Eventually, they conclude that the vistual body is the most important factor of Psi. Regarding the other factors, it is very important to have them in level 1 but not necessarily in level 2. Second most important factor seems to be the scenario coherence (noting that this is not just about the quality and the complexity of the env. but also the appropriatness of the env. to the scenario presented). Finally response to the ball which was there for the factor of physical objects behavior, it was not the same for all participants, but was very important for those who intercated with it extensively (refer to that subsection it is interesting and highlights the usefulness of the questionnaire).
+        Correlational vs Referential vs Credible: " In level 2, the VH addresses the participant directly, adding correlation and referentiality to the behavior. The virtual body, physical behavior, and scenario factors all offer increasing credibility at higher levels of each factor, while the virtual body and physical behavior also offer increasing levels of correlation and referentiality."
+        They suggest that the full-body tracking is teh technology that can contribute the most to Psi, and that the body may indeed be the focal point where PI and Psi are fused. But I think this is narror, avatar behavior VH relies possible on AI technology which is just as important. The bigger an dnmore natural the experiemnt the more we will realize that other factors are equally as important depending on the situation/ scenario.
         `
     },
     
