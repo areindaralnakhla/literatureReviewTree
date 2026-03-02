@@ -108,7 +108,7 @@ const treeData = {
                         {
                             id: 'stimulus-design',
                             label: 'Stimulus\nDesign',
-                            info: 'Virtual stimuli and environmental elements presented to the user.',
+                            info: 'Virtual stimuli presented to the user.',
                             children: [
                                 {
                                     id: 'stimulus-properties',
@@ -137,18 +137,18 @@ const treeData = {
                                         { id: 'mod-combinations', label: 'Modality\ncombinations', info: 'How multiple sensory modalities are combined.' },
                                         { id: 'mod-sync', label: 'Modality\nsynchronization', info: 'Temporal synchronization between different sensory modalities.' }
                                     ]
-                                },
-                                {
-                                    id: 'environment-design',
-                                    label: 'Environment\nDesign',
-                                    info: 'Design of the virtual environment and scene context.',
-                                    children: [
-                                        { id: 'env-scene-type', label: 'Scene/context\ntype', info: 'Type of virtual environment (market place, laboratory, nature, abstract, etc.).' },
-                                        { id: 'env-visual-style', label: 'Visual\nstyle', info: 'Photorealism vs. stylized graphics.' },
-                                        { id: 'env-lighting-cons', label: 'Lighting\nconsistency', info: 'Consistency of lighting across the virtual scene.' },
-                                        { id: 'env-detail-level', label: 'Environmental\ndetail level', info: 'Amount of environmental detail and clutter.' }
-                                    ]
                                 }
+                            ]
+                        },
+                        {
+                            id: 'environment-design',
+                            label: 'Environment\nDesign',
+                            info: 'Design of the virtual environment and scene context.',
+                            children: [
+                                { id: 'env-scene-type', label: 'Scene/context\ntype', info: 'Type of virtual environment (market place, laboratory, nature, abstract, etc.).' },
+                                { id: 'env-visual-style', label: 'Visual\nstyle', info: 'Photorealism vs. stylized graphics.' },
+                                { id: 'env-lighting-cons', label: 'Lighting\nconsistency', info: 'Consistency of lighting across the virtual scene.' },
+                                { id: 'env-detail-level', label: 'Environmental\ndetail level', info: 'Amount of environmental detail and clutter.' }
                             ]
                         },
                         {
@@ -157,6 +157,8 @@ const treeData = {
                             info: 'How the task or interaction is structured for the participant.',
                             children: [
                                 { id: 'task-type', label: 'Task type', info: 'Type of task (passive observation, active interaction, etc.).' },
+                                { id: 'game-mechanics', label: 'Game\nmechanics', info: 'Rules and interactive systems that structure play (e.g., goals/objectives, scoring, rewards/penalties, levels, time pressure, and win/loss conditions).' },
+                                { id: 'task-perspective', label: 'Viewpoint\nperspective', info: 'Reference frame of experience (egocentric/first-person vs exocentric/third-person).' },
                                 { id: 'task-duration', label: 'Trial\nduration', info: 'How long each individual trial or task block lasts.' },
                                 { id: 'task-interval', label: 'Inter-stimulus\ninterval', info: 'Time between stimulus presentations.' },
                                 { id: 'task-session', label: 'Total session\nduration', info: 'Total length of the entire VR session.' },
@@ -195,8 +197,9 @@ const treeData = {
                                         { id: 'neuroticism', label: 'Neuroticism', info: 'Tendency to experience negative emotions like anxiety and sadness.' }
                                     ]
                                 },
+                                { id: 'player-traits', label: 'Player\ntraits', info: 'Stable game-related dispositions (e.g., preference for challenge, exploration, competition, and achievement).' },
                                 { id: 'locus-control', label: 'Locus of\ncontrol', info: 'Belief about whether events are controlled internally (self) or externally (others/fate).' },
-                                { id: 'empathy', label: 'Empathy\ncapacity', info: 'Ability to understand and share others\' emotional experiences.' },
+                                { id: 'empathy', label: 'Empathy\ntrait', info: 'Dispositional tendency to understand and share others\' emotional experiences.' },
                             ]
                         },
                         {
@@ -204,10 +207,10 @@ const treeData = {
                             label: 'Cognitive\nAbilities',
                             info: 'Mental capabilities affecting information processing in VR.',
                             children: [
-                                { id: 'executive-function', label: 'Executive\nfunction', info: 'Ability to plan, organize, and control behavior toward goals.' },
-                                { id: 'working-memory', label: 'Working\nmemory\ncapacity', info: 'Ability to temporarily hold and manipulate information.' },
-                                { id: 'spatial-ability', label: 'Spatial\nability', info: 'Ability to mentally rotate objects and navigate 3D spaces.' },
-                                { id: 'cognitive-load', label: 'Cognitive\nload\ncapacity', info: 'Maximum amount of cognitive resources available for information processing.' }
+                                { id: 'executive-function', label: 'Executive\ncontrol', info: 'Capacity to plan, inhibit, switch, and regulate goal-directed behavior.' },
+                                { id: 'working-memory', label: 'Working\nmemory\ncapacity', info: 'Capacity to temporarily hold and manipulate information.' },
+                                { id: 'spatial-ability', label: 'Spatial\nability', info: 'Capacity to mentally transform and navigate 3D spatial information.' },
+                                { id: 'cognitive-load', label: 'Attentional\ncapacity', info: 'Available attentional resources before task demands cause overload.' }
                             ]
                         },
                         {
@@ -216,6 +219,8 @@ const treeData = {
                             info: 'Individual traits specifically relevant to VR experiences.',
                             children: [
                                 { id: 'immersive-tendency', label: 'Immersive\ntendency', info: 'Natural tendency to become immersed in virtual environments.' },
+                                { id: 'absorption', label: 'Absorption', info: 'Trait-like tendency for deep attentional involvement and reduced awareness of the external world.' },
+                                { id: 'dissociation', label: 'Dissociation', info: 'Trait-like tendency toward detachment from immediate experience or reduced integration of perception/self.' },
                                 { id: 'sickness-susceptibility', label: 'Simulator\nsickness\nsusceptibility', info: 'Susceptibility to motion sickness and discomfort in VR.' },
                                 { id: 'vr-experience', label: 'Prior VR/gaming\nexperience', info: 'Amount and type of previous experience with VR or video games.' }
                             ]
@@ -293,9 +298,9 @@ const treeData = {
                                         { id: 'presence', label: 'Sense of\nPresence', info: 'Subjective sense of "being there" in the virtual environment.' },
                                         { id: 'embodiment', label: 'Embodiment', info: 'Sense of owning and controlling a virtual body.' },
                                         { id: 'copresence', label: 'Copresence', info: 'Sense of being together with others in the virtual environment.' },
-                                        { id: 'Immersion', label: 'Immersion', info: 'Objective level of sensory fidelity and system immersion (relies heavily on hardware and software quality inside internal factors).' },
+                                        { id: 'immersion', label: 'Immersion', info: 'Objective level of sensory fidelity and system immersion (relies heavily on hardware and software quality inside internal factors).' },
                                         { id: 'reality-judgment', label: 'Reality\njudgment', info: 'Judgment of how real the virtual experience seems.' },
-                                        { id: 'flow-state', label: 'Flow state', info: 'State of optimal engagement where challenge matches skill.' }
+                                        { id: 'flow', label: 'Flow', info: 'State of optimal engagement where challenge matches skill.' }
                                     ]
                                 },
                                 {
@@ -306,7 +311,9 @@ const treeData = {
                                         { id: 'goal-clarity', label: 'Goal\nclarity', info: 'Clarity and understanding of task goals.' },
                                         { id: 'agency-control', label: 'Agency/\nControl', info: 'Sense of personal agency and control over events.' },
                                         { id: 'intrinsic-motivation', label: 'Intrinsic\nmotivation', info: 'Internal motivation driven by interest and enjoyment.' },
-                                        { id: 'attention-focus', label: 'Attention\nfocus', info: 'Direction and intensity of attention during the task.' }
+                                        { id: 'attention-focus', label: 'Attention\nfocus', info: 'Direction and intensity of attention during the task.' },
+                                        { id: 'approach-avoidance', label: 'Approach-Avoidance', info: 'The tendency to approach or avoid stimuli based on their valence and properties.' },
+
                                     ]
                                 }
                             ]

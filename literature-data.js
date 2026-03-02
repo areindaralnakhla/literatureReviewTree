@@ -13,12 +13,12 @@ const literatureDatabase = [
         publisher: "MIT Press",
         doi: "",
         link: "https://publicationslist.org/data/melslater/ref-22/representation%20systems%20etc.pdf",
-        tags: ["internal-factors", "external-factors"],
+        tags: ["internal-factors", "external-factors", "task-perspective"],
         notes: `This is the paper that help me finally decouple factors.
         Slater, with the help of previous literature from the late 90s, classifies factors that affect human behavior in VR.
         Even though the experiment he conducted based on NLP is probably obsolete, and considering the technology now, it is not too strong to indicate much about presence.
         So I only take the theoretical part of the paper, which is the classification of factors into two main categories: internal and external.`,
-        methodologyTakeaway: ``
+        methodologyTakeaway: `Perceptual position that is first-person normally indicates higher presence than third person or abstract perspective. "`
     },
     {
         id: 2,
@@ -28,7 +28,7 @@ const literatureDatabase = [
         publisher: "MDPI",
         doi: "",
         link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11852960/",
-        tags: ["attention-focus", "embodiment", "task-structure", "stimulus-design"],
+        tags: ["approach-avoidance", "task-structure", "stimulus-design"],
         notes: `This was a comprehensive systematic review of approach-avoidance in 'ecologically valid enviornemnts; so either real setups or in VR'.
         The review collected 413 and ended up with 14 after the screening process.
         It highlights the limitations, and faliures of the current literature, theres always either task is not well designed, stimulus is not well designed, embodied response is not natural, the N is too small.
@@ -43,7 +43,7 @@ const literatureDatabase = [
         publisher: "Elsevier",
         doi: "",
         link: "http://www.philipcorr.net/uploads/downloads/270.pdf",
-        tags: ["personality", "motivational-state", "stimulus-properties", "attention-focus"],
+        tags: ["psychological-traits", "motivational-state", "stimulus-properties", "approach-avoidance"],
         notes: `This chapter from the book 'Neuroimaging Perconality, Social Cognition, and Character' was very informative and helped me understand approach-avoidance frome a neurobiological (objective) perspective rather than the theoretical, philisophical only, and frankly messy description of J Elliot's.
         Besides explaining goals and motivation in simple organisms and then more complex ones like rats and humans, it mentions many important properties of a stimulus that I should be aware of; its not just valence, but valuation differences, transience, etc., all with useful examples.
         Additionally and more importantly it explains personality's huge impact on the nature of approach-avoidance systems and their activations intensity, as well as the different ways to measure such stable traits.
@@ -71,34 +71,45 @@ const literatureDatabase = [
         publisher: "The Royal Society",
         doi: "",
         link: "",
-        tags: ["presence", "immersion", "hardware", "software", "visual", "visual-fov", "psychological-activation", "anxiety-diorders"],
-        notes: `This is the earliest paper in which Slater disgusses the concept of "Presence" and its two components: place illusion (PI) and plausability illusion (Psi).
-        He also discusses "Immersion" and sensorimotor contingences, describing what would be the ideal immersive VR system (the modalities that should be included at least), and proceeds to describe the VR in 2009 including, unlike CAVE system, standalone HMD with tracking technology updating stereo visuals, audio, and limited haptic feedback.
-        There he discusses how immersion relies on hardware and software quality (the internal factors in our tree) by referring to them as "Parameters that determine the quality of the experience" (e.g.,graphics frame rate, extent of tracking (only head? 3Dof, 6Dof, or head and hands, or full body?), latency, quality of images (brightness, spatial, colors, contrast resolutions), FoV, visual quality of the rendered scene (e.g., level of detail, realism, etc.), the dynamics (how well does the behaviour of objects conform to expectations) and the range of sensory modalities accommodated (and within each sensory modality the fidelity of its displays).)
-        Therefore, immersive systems can be characterized by the sensorimotor contingencies (SCs) that they support. SCs refer to the actions that we know to carry out in order to perceive, for example, moving your head and eyes to change gaze direction, or bending down and shifting head and gaze direction in order to see underneath something. 
+        tags: ["presence", "immersion", "hardware", "software", "visual", "visual-fov", "psychological-activation", "anxiety-disorders"],
+        notes: `This is the earliest paper I believe in which Slater disgusses the concept of "Presence" as two components: place illusion (PI) and plausability illusion (Psi).
+        SCs (sensorimotor contingencies) refer to the actions that we know to carry out in order to perceive, for example, moving your head and eyes to change gaze direction, or bending down and shifting head and gaze direction in order to see underneath something. 
+        In my own words, PI refers to the sense of being there resulting by consistent SCs. PI could result from a single modality like visual yaw rotation and resulting head tracking, but the more modalities -> more SCs -> more immersion -> more PI. However, PI could be easily break eitehr by introducing a new modalitity that will require relearning how to percieve the envionment all over again (even tho could be quick), or when we hit a wall (an external SCs).
+        Psi, the more challenging one, happens when the environment feels real, avatars smile at you when you approach, respond to what you say, the envionment respond to your presence and actions in a consistent matter in a way that matches your expectations and prior knowledge. Much like reality judgement (defines elsewhere in the literature). And Psi is not really affected by the reaslism of the scenem could be at its strongest in a very low polly env. 
+        Breaking Psi is much more harmful and could not recover the same way PI can recover because PI is cause by teh physical system's characteristics (giving a number of SCs) so if one breaks, user relearns how to percieve again according to available SCs. While Psi is more about the overall credibility of the scenario being depicted in comparasion with expectations. If it doesnt match that, then it would just not give a strong sense of agency, our cognitive ability will continue to remind us that this is not real even though deep down we know for sure nothing is real. 
+        Therefore "breaks in presence (BIPs)" becomes an interesting way of measuring presence. 
+        He describes an ideal immersive VR system as the one that at least has visual, audio, and haptic modalities, and the more modalities we add obviously more immersive, but the more constraints on synchronization and delivery accuracy.
+        There he discusses how immersion is defined by the number of SCs, therefore relying on hardware and software quality (the external factors in our tree) by referring to them as "Parameters that determine the quality of the experience" (e.g.,graphics frame rate, extent of tracking (only head? 3Dof, 6Dof, or head and hands, or full body?), latency, quality of images (brightness, spatial, colors, contrast resolutions), FoV, visual quality of the rendered scene (e.g., level of detail, realism, etc.), the dynamics (how well does the behaviour of objects conform to expectations) and the range of sensory modalities accommodated (and within each sensory modality the fidelity of its displays).)
+        Since immersion is closley correlated to modalities and system characteristics, then immersive systems can be characterized by the sensorimotor contingencies (SCs) that they support. 
         He defines "valid effectual actions" which is general refering to actions participants take to make changes in the env, "valid sensorimotor actions" which is a subset of acitons that consistently changes images (in all sensory modalities) so that perception may be changed meaningfuly, "valid actions" as their combination: the actions that a participant can take that can result in changes in perception or changes to the environment. 
         Then describes immersion as a property of the valid actions that are possible within the system. System A is at a higher level of immersion than system B if the valid actions of B form a proper subset of those of A. And refers to an IVR that has a set of valid actions that are approximations of reality as a first-order system, with corresponding SCs in at least one sensory modality. A second-order system is one that has valid actions as a proper subset of a first-order system, and so on for lower orders.
         Having the same range of valid SCs as in physical reality is not sufficent: Even with valid head-tracking sensorimotor contingencies, a restricted FoV can still distort behavior: users must relearn how to perceive and act within the system’s limits, so responses may reflect device constraints rather than natural, real-world human behavior.
-        Immersion and PI both rely on SCs, but in a CAVE system which is teh same immersivity level for both participants: person A experiences less PI than B. Because person A moving around while B standing still and looking around. A hits a wall (external perception) breaking the PI. A is probing the bounds of perception to a much greater extent than B, and therefore PI will have the opportunity to break more often. Immersion provides the boundaries within which PI can occur.
+        Back to previous point; immersion and PI both rely on SCs, but in a CAVE system which is teh same immersivity level for both participants: person A experiences less PI than B. Because person A moving around while B standing still and looking around. A hits a wall (external perception) breaking the PI. A is probing the bounds of perception to a much greater extent than B, and therefore PI will have the opportunity to break more often. Immersion provides the boundaries within which PI can occur.
         Hence, PI is the human response to a given level of immersion, and is bound by the set of SCs possible at that level of immersion. The illusion of ‘being there’ does not refer to the same qualia across different levels of immersion.
-        While PI is about how the world is perceived, the Psi is about what is perceived. Psi is the illusion that what is apparently happening is really happening (even though you know for sure that it is not). Think of the avatar smiling at you or stepping back when you approach example.
-        Psi is for the virtual reality to provide correlations between external events not directly caused by the participant and his/her own sensations (both exteroceptive and interoceptive). If we consider the avatar that looks at the participant in the eye (the external event), this would be likely to cause a response in the participant that could be expressed by physiological changes such as with respect to heart rate, skin temperature (blushing) and so on
-        It is important to realize that Psi does not require physical realism—witness people’s responses in the virtual reprise of the Stanley Milgram obedience experiment, where it was shown that people exhibit anxiety responses when causing pain to a relatively low fidelity virtual character in terms of both visual appearance and behaviour.
-        The body is a focal point where PI and Psi are fused. As we have argued, the action involved in looking at your own body provides very powerful evidence for PI (your body is in the place you perceive yourself to be).
-        Now suppose you move your limbs and you see the limbs of this virtual body move in synchrony. This is a very powerful event in the external world that clearly relates to you—a correlation between proprioception and visual exteroception.
+        The body is a focal point where PI and Psi are fused. The action involved in looking at your own body provides very powerful evidence for PI (your body is in the place you perceive yourself to be).
         `,
         methodologyTakeaway: `
-        Is reality judgement the same as Psi? Because teh def of Psi is determined by the extent to which the system can produce events that directly relate to participant, the overall credibility of teh scenariobeing depicted in comparasion with expectations.
+        QUESTION: What is really "reality judgement" and is it the same as Psi? Because the def. of Psi according to Slater is determined by the extent to which the system can produce events that directly relate to participant, the overall credibility of the scenario being depicted in comparasion with expectations. 
+        ANSWER: Still, not very clear, it seems like it's an inconsistency in literature taxonomy which makes sense because it's complex and early. However, I will consider them as the same for now (trusting Slater), and if I find more papers that clarify this, then I can update the tree taxonomy later.
         The ideal immersive virtual reality (IVR) system should include (visual, audio, and haptic). This is important to consider if we were pressured to reduce complexity of modality combinations. The more modalities we add, the more constraints on synchronization and delivery accuracy. Refer to paper id: 4 for more details on immersion and characteristics of a system.
-        "Realistic Response" is constrainted by the level of "Immersion" which is determined by available "SCs" determined by system physical characteristics/properties and which changes perception and therefore affect "Presence".
         We want to create a system close to a first-order system.
-        Displays and interactive capabilities are inseparable: if the participant wants to examine an object very closely, then the extent to which this is possible will be limited by the resolution of the display.
-        Using the same questionnaire to measure presence across different systems may not be appropriate, as the factors contributing to presence may differ based on the system's characteristics.
-        We must implement Psi in the enviornemnt, events happening directly to you (example: responsive avatars). Psi is the most interesting since it's not that well implemented yet.
-        We also see here how internal dynamic states related to psychopathology (e.g., anxiety disorders, paranoia) triggering the "during-study" psychological activation because of certain Psi within the enviornment so we need a suitable questionnaire here to record such interperonsal differences. This is to note that Psi causes external and internal changes.
-        Similarly PI can cause the same, if the virtual system is matching the real world. like the presence of a wooden bridge in both physical and virtual env.
-        Consider real-time ray tracing in an HMD, so that when the participants moved they could see shadows and reflections of their virtual body move in correlation.
+        Using the same questionnaire to measure presence across different systems (first order vs 4th order) may not be appropriate (comparable), as the factors contributing to presence may differ based on the system's characteristics. Is this where we consider "sentiment analysis" or should we not worry because we are already getting behavrioal data. Questionnaires are just to increase confidence, answer unclear patterns, and increase the analysis's power.
+        We must implement Psi in the enviornemnt, events happening directly to you (example: responsive avatars).Consider also real-time ray tracing in an HMD, so that when the participants move they could see shadows and reflections of their virtual body move in correlation.
+        We also see here how internal dynamic states related to psychopathology (e.g., anxiety disorders, paranoia) triggering the "during-study" psychological activation because of certain Psi within the enviornment so we need a suitable questionnaire here to record such interperonsal differences. This is to note that Psi causes external and internal changes. Which questionnaire to use?
+        Similarly PI can cause the same, the place alone reminds user of a specific traumatic experience. Also if the virtual system is matching the physical room and objects. Like walking on a wooden bridge in VR at the same place where a physical wooden block is placed.
         `
+    },
+    {
+        id: 7,
+        title: "How immersive is enough? A meta-analysis of the effect of immersive technology on user presence",
+        authors: "Cummings, J. J., Bailenson, J. N.",
+        year: 2016,
+        publisher: "Taylor & Francis",
+        doi: "",
+        link: "",
+        tags: ["presence", "immersion"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
     },
     {
         id: 6,
@@ -124,21 +135,38 @@ const literatureDatabase = [
         `
     },
     {
-        id: 7,
-        title: "How immersive is enough? A meta-analysis of the effect of immersive technology on user presence",
-        authors: "Cummings, J. J., Bailenson, J. N.",
-        year: 2016,
-        publisher: "Taylor & Francis",
-        doi: "",
-        link: "",
-        tags: ["presence", "immersion"],
-        notes: "to be read later",
-        methodologyTakeaway: ""
+        id: 8,
+        title: "Influence of Scenarios and Player Traits on Flow in Virtual Reality",
+        authors: "Lavoué, É., Villenave, S., Serna, A., Didier, C., Baert, P., Lavoué, G.",
+        year: 2024,
+        publisher: "IEEE Transactions on Visualization and Computer Graphics",
+        doi: "10.1109/TVCG.2023.3332261",
+        link: "https://ieeexplore-ieee-org.ec-lyon.idm.oclc.org/document/10315963",
+        tags: ["flow", "env-scene-type", "task-structure", "game-mechanics", "psychological-traits", "player-traits", "vr-experience"],
+        notes: `They refernece Coskszentmihalyi for the definition of flow as "the optimal experience" and "the holistic sensation that people feel when they act with total involvement. Also according to Shin, flow is "the mental state where complete involvement, enjoyment, and loss of one's senses of time and space are accompanied.
+        Additionally, flow felt by users depends on the task independently from the technological quality of the VRE. In this paper, they examine whether flow may depend on the scenario performed within the same VRE.
+        Flow is a multi-dimensional construct, each dimension is not impacted the same way by thr scenario and not influenced equally (positivley/negatively) by player traits.
+        They conclude that the type of scenario and the order they are presented to the users have an impact on specific dimensions of the flow experience, several dimensions being higher when the scenario is performed last. And that almost all dimensions of flow are influenced by the player traits. The Aestethic trait has rather positive influence on user flow in all three scenarios 
+
+
+        `,
+        methodologyTakeaway: `This study implies that we need to consider the sceario design due to individual differences specifically, in this case, the player traits. This must contribute to enhancing the user experience. 
+        We first must allow time for practice in the VRE
+        With the above, we therefore provide afforances that support preconditions of flow
+        what are preconditions of flow?
+        `,
     },
     {
-        id: 8,
-
-
+        id: 9,
+        title: "The relationship between individual characteristics and experienced presence",
+        authors: "Ling, Y., Nefs, H. T., Brinkman, W.-P., Qu, C., Heynderickx, I.",
+        year: 2013,
+        publisher: "Computers in Human Behavior",
+        doi: "",
+        link: "",
+        tags: ["presence", "psychological-traits", "immersive-tendency", "absorption", "dissociation"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
     },
     {
         id: 10,
@@ -148,7 +176,7 @@ const literatureDatabase = [
         publisher: "IEEE",
         doi: "",
         link: "",
-        tags: ["presence", "plausibility-illusion"],
+        tags: ["presence", "reality-judgment"],
         notes: `They reinforce my initial understanding before even reading the literature that when one experineces a perfect VR envronment (or as they say "PI and Psi" and therefore presence), one should also respond realisticly to stimuli from teh virtual scenario.
         In the literature, any works examining the system characteristics or its SCs would be on immersion and therefore PI, but when it comes to Psi which seems less studies and mastered, in the literature we will encounter "coherence" which refers to the factors contributing to Psi (Skarbez, 2015)
         Broadly, system characteristics that contribute to Psi are: behavior of vistual humans in the enviornment, behavior of physical objects in the environment, and the like. 
@@ -172,6 +200,126 @@ const literatureDatabase = [
         Correlational vs Referential vs Credible: " In level 2, the VH addresses the participant directly, adding correlation and referentiality to the behavior. The virtual body, physical behavior, and scenario factors all offer increasing credibility at higher levels of each factor, while the virtual body and physical behavior also offer increasing levels of correlation and referentiality."
         They suggest that the full-body tracking is teh technology that can contribute the most to Psi, and that the body may indeed be the focal point where PI and Psi are fused. But I think this is narror, avatar behavior VH relies possible on AI technology which is just as important. The bigger an dnmore natural the experiemnt the more we will realize that other factors are equally as important depending on the situation/ scenario.
         `
+    },
+    {
+        id: 11,
+        title: "Psychological variables and reality judgment in virtual environments: the roles of absorption and dissociation",
+        authors: "Baños, R., Botella, C., Garcia-Palacios, A., Villa, H., Perpiñá, C., Gallardo, M.",
+        year: 1999,
+        publisher: "CyberPsychology & Behavior",
+        doi: "",
+        link: "",
+        tags: ["reality-judgment", "presence", "psychological-traits", "immersive-tendency", "absorption", "dissociation"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 12,
+        title: "Presence equation: An investigation into cognitive factors underlying presence",
+        authors: "Sas, C., O'Hare, G. M. P.",
+        year: 2003,
+        publisher: "Presence",
+        doi: "",
+        link: "",
+        tags: ["presence", "cognitive-abilities", "psychological-traits", "absorption", "empathy", "immersive-tendency"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 13,
+        title: "The impact of personality factors on the experience of spatial presence",
+        authors: "Sacau, A., Laarni, J., Ravaja, N., Hartmann, T.",
+        year: 2005,
+        publisher: "The 8th International Workshop on Presence (Presence 2005)",
+        doi: "",
+        link: "",
+        tags: ["presence", "psychological-traits", "big-five", "agreeableness", "absorption"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 14,
+        title: "Personality and presence in virtual reality: Does their relationship depend on the used presence measure?",
+        authors: "Kober, S. E., Neuper, C.",
+        year: 2013,
+        publisher: "International Journal of Human-Computer Interaction",
+        doi: "",
+        link: "",
+        tags: ["presence", "psychological-traits", "big-five", "absorption", "immersive-tendency"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 15,
+        title: "Absorption, dissociation, locus of control and presence in virtual reality",
+        authors: "Murray, C. D., Fox, J., Pettifer, S.",
+        year: 2007,
+        publisher: "Computers in Human Behavior",
+        doi: "",
+        link: "",
+        tags: ["presence", "absorption", "dissociation", "locus-control", "psychological-traits"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 16,
+        title: "Individual differences in the sense of presence",
+        authors: "Jurnet, I. A., Beciu, C. C., Maldonado, J. G.",
+        year: 2005,
+        publisher: "Proceedings of Presence",
+        doi: "",
+        link: "",
+        tags: ["presence", "stable-traits", "psychological-traits", "immersive-tendency"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 17,
+        title: "Personality-related differences in subjective presence",
+        authors: "Laarni, J., Ravaja, N., Saari, T., Hartmann, T.",
+        year: 2004,
+        publisher: "Proceedings of the Seventh Annual International Workshop Presence",
+        doi: "",
+        link: "",
+        tags: ["presence", "psychological-traits", "big-five", "extraversion", "agreeableness"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 18,
+        title: "Immersion in mediated environments: The role of personality traits",
+        authors: "Weibel, D., Wissmath, B., Mast, F. W.",
+        year: 2010,
+        publisher: "Cyberpsychology, Behavior, and Social Networking",
+        doi: "",
+        link: "",
+        tags: ["immersion", "presence", "psychological-traits", "big-five", "stable-traits"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 19,
+        title: "Experienced presence within computer-mediated communications: Initial explorations on the effects of gender with respect to empathy and immersion",
+        authors: "Nicovich, S. G., Boller, G. W., Cornwell, T. B.",
+        year: 2005,
+        publisher: "Journal of Computer-Mediated Communication",
+        doi: "",
+        link: "",
+        tags: ["presence", "immersion", "gender", "empathy", "psychological-traits"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
+    },
+    {
+        id: 20,
+        title: "Peripersonal and interpersonal space in virtual and real environments: Effects of gender and age",
+        authors: "Iachini, T., Coello, Y., Frassinetti, F., Senese, V. P., Galante, F., Ruggiero, G.",
+        year: 2016,
+        publisher: "Journal of Environmental Psychology",
+        doi: "",
+        link: "",
+        tags: ["gender", "age", "spatial-ability", "env-scene-type"],
+        notes: "to be read later",
+        methodologyTakeaway: ""
     },
     
 
