@@ -14,11 +14,11 @@ const literatureDatabase = [
         doi: "",
         link: "https://publicationslist.org/data/melslater/ref-22/representation%20systems%20etc.pdf",
         tags: ["internal-factors", "external-factors", "task-perspective"],
-        notes: `This is the paper that help me finally decouple factors.
-        Slater, with the help of previous literature from the late 90s, classifies factors that affect human behavior in VR.
+        notes: `This is the paper that inspired me to have this tree, to identify the many variables- decouple factors.
+        Slater, with the help of previous literature from the late 90s, classifies factors that affect human behavior in VR into internal and external.
         Even though the experiment he conducted based on NLP is probably obsolete, and considering the technology now, it is not too strong to indicate much about presence.
         So I only take the theoretical part of the paper, which is the classification of factors into two main categories: internal and external.`,
-        methodologyTakeaway: `Perceptual position that is first-person normally indicates higher presence than third person or abstract perspective. "`
+        methodologyTakeaway: `Perceptual position that is first-person normally indicates higher presence than third person or abstract perspective."`
     },
     {
         id: 2,
@@ -31,7 +31,7 @@ const literatureDatabase = [
         tags: ["approach-avoidance", "task-structure", "stimulus-design"],
         notes: `This was a comprehensive systematic review of approach-avoidance in 'ecologically valid enviornemnts; so either real setups or in VR'.
         The review collected 413 and ended up with 14 after the screening process.
-        It highlights the limitations, and faliures of the current literature, theres always either task is not well designed, stimulus is not well designed, embodied response is not natural, the N is too small.
+        It highlights the limitations, and faliures of the current literature, it's always either that the task is not well designed, stimulus is not well designed, embodied response is not natural, or the N is too small.
         Then offers discussion for important considerations and future opportunities for this research, so i have to reread it to not do the same mistakes.`,
         methodologyTakeaway: ``
     },
@@ -44,7 +44,7 @@ const literatureDatabase = [
         doi: "",
         link: "http://www.philipcorr.net/uploads/downloads/270.pdf",
         tags: ["psychological-traits", "motivational-state", "stimulus-properties", "approach-avoidance"],
-        notes: `This chapter from the book 'Neuroimaging Perconality, Social Cognition, and Character' was very informative and helped me understand approach-avoidance frome a neurobiological (objective) perspective rather than the theoretical, philisophical only, and frankly messy description of J Elliot's.
+        notes: `This chapter from the book 'Neuroimaging Perconality, Social Cognition, and Character' was very informative and helped me understand approach-avoidance from a neurobiological (objective) perspective rather than the theoretical, philisophical only, and frankly messy description of J Elliot's.
         Besides explaining goals and motivation in simple organisms and then more complex ones like rats and humans, it mentions many important properties of a stimulus that I should be aware of; its not just valence, but valuation differences, transience, etc., all with useful examples.
         Additionally and more importantly it explains personality's huge impact on the nature of approach-avoidance systems and their activations intensity, as well as the different ways to measure such stable traits.
         It elaborates on two personalities from the Big Five: extraversion and neuroticism, and how they are related to approach-avoidance which is to be considered in my analysis.`,
@@ -59,9 +59,37 @@ const literatureDatabase = [
         doi: "",
         link: "",
         tags: ["presence", "immersion"],
-        notes: `The degree of immersion can be objectively assessed as the characteristics of a technology, and has dimensions such as the extent to which a display system candeliver an inclusive, extensive, surrounding and vivid illusion of virtual environment to aparticipant. 
-        Other dimensions of immersion are concerned with the extent of body matching, and the extent to which there is a self-contained plot in which the participant can act and in which there is an autonomous response. `,
-        methodologyTakeaway: `To be read later`
+        notes: `The degree of immersion can be objectively assessed as the (1) characteristics of the technolog + (2) the extent of body matching. 
+        (1) Immersion has 4 aspects concerned with the display of information: Inclusive (I) indicates the extent to which physical reality is shut [an HMD being weightless so that this aspect of reality isnt percieved by the participant], Extensive (E) indicates the range of sensory modalities accommodated. Surrounding (S) indicates the extent to which this virtual reality is panoramic rather than limited to a narrow field. Vivid (V) indicates the resolution, fidelity, and variety of energy simulated within a particular modality (for example, the visual and colour resolution).
+        (2) Matching requires that there is match between the participant's proprioceptive feedback about body movements, and the information generated on the displays.
+        Perception: is at the center of the position of the VB: visual perception from the viewpoint of the eyes in the head of VB (egocentric vs exocentric).
+        Plot: this is the extent to which the VE in a particular context presents a story-line that is self-contained, has its own dynamic, and presents an alternate unfolding sequence of events, quite distinct from those currently going on in the “real world”
+        Hollistically: Immersion can be an objective and quantifiable description of what any particular system provide. Presence is a state of consciousness, the (psychological) sense of being in the virtual environment. We can also refer to our tree (immersion: the left side/ external, and presence: the riht side/ internal).
+        Presence is both a subjective (PI) and objective (Psi) description of a person's state wrt an environment. Subjective relates to their evaluation of their degree of “being there”, the extent to which they think of the virtual environment as “place like” (subject to suspension of disbelief). The objective is an observable behavioural phenomenon, the extent to which individuals behave in a VE similar to the way they would behave in similar circumstances in everyday reality
+        Influence of Immersion on Presence with example studies: 
+        a) Concerning inclusivness (from Patel 1994): subjects were grouped according to the quality of sound they received - sound only from the real world of the laboratory, white noise generated by the HMD speakers, non-directional sound generated by the speakers, and finally spatialised directional sound. The result was that the largest change in the influence on presence was from the “no virtual sound” condition to the “white noise” condition - suggesting that the white noise isolated the subject from the real world sounds, supporting this notion of inclusion. 
+        b) Concerning vividness (from Uno and Slater 1997): subjects were exposed to differing combinations of elasticity, friction, and collision response in the context of a virtual bowling alley. It was found that in their application, the more realistic simulation of friction was significantly and positively associated with reported presence, but that more accurate simulations of elasticity and collision response did not have such an effect. 
+        c) Concerning proprioceptive matching (Slater, Usoh, and Steed 1995) found that subjects who walked through a virtual environment using a “walking in place” technique reported a higher sense of presence than those who navigated the environment using a pointing device
+        d) Concerning extensivness (Hendric and Barfield 1996): In one study spatialized sound was introduced or not into a visual VE. In the second study, the comparison was between non-spatialized sound and spatialized sound. In each case there was a significant effect on presence - spatialized sound led to a higher reported presence than both no sound and non-spatialized sound.
+        e) Concerning plot at the time of the study they knew of no study that examines the influenece of plot as inod "story line", however, (Welch et. al 1996): included interactivity as one of the indp variables...
+        In (Slater, Linakis, Usoh, and Kooper, 1996), they explored the relatoioship between immersion, presence, and performance. Concerned a task involving comprehension and memory of complex 3D Objects..., they saw that increase of immersion in the aspect of egocentric rather exocentric, and vividness is what increased task perfromance. The study also found that reported presence was higher for egocentric compared to exocentric immersion, but that presence itself was not associated with task performance.
+        Dimensions of Immersion in Shared Environments: vividness is considered first. The impact on group interaction of the level of extensiveness of a virtual space is harder to demonstrate.... etc, he continues to describe the studies available on work collaboration and framing it within the the immersion aspects he discussed. He stresses on vividness and plor (envionmental autonomy) and interactivity. 
+        `,
+        methodologyTakeaway: `To further control immersion, focus on its 4 aspects (I) inclusive, (2) Extensive, (3) Surrounding, and (4) Vivid.
+        Each of these dimensions of immersion exists on multiple levels. The most fundamental levels may correlate with the responses of the autonomic nervous system (mentioned in the approach-avoidance neurobiology paper). 
+        Here he doesnt actually yet mention PI and Psi until recent papers, but i can infer that because his definitions are still consistent.
+        In that paper also he shows the relationship between immersion and presence; the impact of immersion display aspects (I, S, E, V) is mediated through two filters: (a) the application/ task context [the location within a chamber, auditory quality of orchestra example- audio quality is very important in this case but visual is less important], and (b) the perceptual requirements of the individual (participant preferenecs to various modalities- what mathew is doing). 
+        Immersion and type of perception can affect task performnace but not presence. 
+        So we can say that presence is not there for task perfromance but rather to enable behavior that is as realistic as what a participant would do in real life.
+        Paragraph 2.5 is a great summary of the main flow of immersive VEs.
+            "The most important idea that we have presented here is the idea of external, objectively measurable characteristics that lead to a capability of placing an individual inside a computer generated environment. This is what we have called immersion, and have considered immersion ideally requiring inclusive, extensive, surrounding, and vivid display systems, where there is real-time matching between proprioception and sensory data." 
+            The VE should portray a story line, in which the individual can participate and modify.
+            On the other hand, presence is the potential psychological and behavioural response to immersion
+            A highly present individual should identify with the virtual body portrayed in the VE, and therefore consider him or her self as being located in the environment in which that body is portrayed
+            Such a highly present individual would be observed to behave in a VE in a manner similar to how they would behave in a similar environment in everyday reality. 
+        The question to ask is: what display characteristics (relevant to a certain application domain) maximise presence? 
+        It may be the case that a non-realistic display enhances presence, or that the characteristics that enhance presence are not the same as those that enhance a particular type of task performance. The separation between immersion and presence allows both to be investigated, and even if it turns out that they are correlated in a particular application, this may not be due to causal connection.
+        `
     },
     {
         id: 5,
@@ -108,7 +136,7 @@ const literatureDatabase = [
         doi: "",
         link: "",
         tags: ["presence", "immersion"],
-        notes: "to be read later",
+        notes: "",
         methodologyTakeaway: ""
     },
     {
@@ -150,7 +178,7 @@ const literatureDatabase = [
 
 
         `,
-        methodologyTakeaway: `This study implies that we need to consider the sceario design due to individual differences specifically, in this case, the player traits. This must contribute to enhancing the user experience. 
+        methodologyTakeaway: `This study implies that we need to consider the scenario design due to individual differences specifically, in this case, the player traits. This must contribute to enhancing the user experience. 
         We first must allow time for practice in the VRE
         With the above, we therefore provide afforances that support preconditions of flow
         what are preconditions of flow?
