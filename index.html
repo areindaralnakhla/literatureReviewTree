@@ -15,12 +15,28 @@
             <button id="zoomOutBtn">- Zoom Out</button>
             <button id="resetBtn">Reset</button>
             <span class="zoom-level" id="zoomLevel">100%</span>
+            <button id="timelineBtn" class="toggle-btn">Timeline View</button>
         </div>
     </div>
     
     <div class="tree-container" id="treeContainer">
         <svg id="treeSvg" class="tree-svg"></svg>
         <div id="tooltip" class="tooltip"></div>
+    </div>
+
+    <div id="timelineView" class="timeline-view hidden" style="display: none;">
+        <div class="timeline-toolbar">
+            <input id="filterTitle" type="text" placeholder="Paper name/title">
+            <input id="filterAuthor" type="text" placeholder="Filter by author">
+            <input id="filterTag" type="text" placeholder="Filter by tag">
+            <input id="filterDoi" type="text" placeholder="Filter by DOI">
+            <input id="filterKeyword" type="text" placeholder="Keyword in title/notes/takeaways">
+            <input id="filterYearFrom" type="number" placeholder="From year">
+            <input id="filterYearTo" type="number" placeholder="To year">
+            <button id="clearTimelineFilters">Clear</button>
+        </div>
+        <div id="timelineStats" class="timeline-stats"></div>
+        <div id="timelineContent" class="timeline-content"></div>
     </div>
 
     <!-- Literature overlay -->
@@ -38,6 +54,7 @@
 
     <script src="tree-data.js"></script>
     <script src="literature-data.js"></script>
+    <script src="timeline-renderer.js"></script>
     <script src="tree-renderer.js"></script>
 </body>
 </html>

@@ -40,6 +40,7 @@ class TreeDiagram {
     // Setup all event listeners for interactions
     setupEventListeners() {
         const container = document.getElementById('treeContainer');
+        const timelineView = document.getElementById('timelineView');
         const tooltip = document.getElementById('tooltip');
 
         // Tooltip handling
@@ -83,6 +84,32 @@ class TreeDiagram {
                 this.literatureMode = !this.literatureMode;
                 toggleBtn.classList.toggle('active', this.literatureMode);
                 this.render(); // Re-render to show/hide literature counts
+            });
+        }
+
+        // Timeline mode toggle button
+        const timelineBtn = document.getElementById('timelineBtn');
+        if (timelineBtn && container && timelineView) {
+            timelineBtn.addEventListener('click', () => {
+                const showTimeline = timelineView.classList.contains('hidden');
+
+                timelineView.classList.toggle('hidden', !showTimeline);
+                timelineView.style.display = showTimeline ? 'block' : 'none';
+
+                container.style.display = showTimeline ? 'none' : 'block';
+
+                timelineBtn.classList.toggle('active', showTimeline);
+
+                // Reset literature mode button when leaving tree view
+                if (showTimeline && toggleBtn) {
+                    this.literatureMode = false;
+                    toggleBtn.classList.remove('active');
+                }
+
+                if (!showTimeline) {
+                    this.render();
+                    this.updateZoomLevel();
+                }
             });
         }
         
