@@ -2,6 +2,9 @@
  * Literature Database
  * Each entry represents a paper/article with its metadata and associated nodes
  * Tags should match node IDs from tree-data.js
+ * Optional field: image (URL to figure/table/cover image)
+ * Optional field: imageLinks ({ label: url }) for multiple inline links in notes/takeaways
+ * Optional field: images ([url] or [{ label, url }]) for ordered or labeled inline links
  */
 const literatureDatabase = [
     // Example entries - replace with your actual literature
@@ -13,7 +16,7 @@ const literatureDatabase = [
         publisher: "MIT Press",
         doi: "",
         link: "https://publicationslist.org/data/melslater/ref-22/representation%20systems%20etc.pdf",
-        tags: ["internal-factors", "external-factors", "task-perspective"],
+        tags: ["internal-factors", "external-factors", "user-perspective"],
         notes: `This is the paper that inspired me to have this tree, to identify the many variables- decouple factors.
         Slater, with the help of previous literature from the late 90s, classifies factors that affect human behavior in VR into internal and external.
         Even though the experiment he conducted based on NLP is probably obsolete, and considering the technology now, it is not too strong to indicate much about presence.
@@ -28,7 +31,7 @@ const literatureDatabase = [
         publisher: "MDPI",
         doi: "",
         link: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11852960/",
-        tags: ["approach-avoidance", "task-structure", "stimulus-design"],
+        tags: ["approach-avoidance", "task-structure", "stimulus-design", "systematic-review"],
         notes: `This was a comprehensive systematic review of approach-avoidance in 'ecologically valid enviornemnts; so either real setups or in VR'.
         The review collected 413 and ended up with 14 after the screening process.
         It highlights the limitations, and faliures of the current literature, it's always either that the task is not well designed, stimulus is not well designed, embodied response is not natural, or the N is too small.
@@ -128,6 +131,44 @@ const literatureDatabase = [
         `
     },
     {
+        id: 6,
+        title: "A separate reality: An update on place illusion and plausibility in virtual reality",
+        authors: "Slater, M., Banakou, D., Beacco, A., Gallego, J., Macia-Varela, F., Oliva, R.",
+        year: 2022,
+        publisher: "Frontiers Media SA",
+        doi: "",
+        link: "https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2022.914392/full",
+        tags: ["presence", "embodiment", "copresence", "literature-review", "presence-measure-questionnaires"],
+        image: "figures\\presence_measurements.jpg",
+        notes: `Slater clarifies factors to presence by seperating it into two: the place illusion (PI) and plausability illusion (Psi).
+        He also talks about Embodiment as a third illusion of ownership over the virtual body.
+        A 4th illusion is Copresence which is the belief of being together with other people in the virtual enviornment.
+        So, to summerize so far: Presence (PI and Psi), Embodiment, and Copresence. However, seems like if PI and Psi are done well, it paves the way automatically for embodiment and copresence, so they are not really separate illusions but rather consequences of the first two.
+        Then he gives us a nice overview of the diverse methods to measuing Presence, obviously either through subjective (questionnaires) or objective (physiological, behavioral) measures. He also introduces other ways such as "breaks in presence" (BIPs), Configuration Transitions similar to what I already read in Skarbez's paper on copresence, and finally, Sentiment Analaysis. Here's a nice [table] summerizing this. 
+        Using questionnaires alone has many problems mentioned in page 5; mainly that they may bring about the very feelings that it is supposed to measure.
+        The last doesnt really have to be a measure of presence alone, since presence is not the only way assess the user's response to virtual reality experience, and therefore proposes the idea of taking participants preference instead through what he calls "sentiment analysis", this is important because we dont have to enforce our own definitions as researchers on participants who have no idea about the terms we use in questionnaires and what they entail.
+        Point out also the plausability is the most complex and interesting illusion which we should pay attention to.
+        To make Psi slightly more feasible to implement and approachm they introdcue the term "Coherence", see paper id 10. Coherence describes some of the factors that go into producing Psi.
+        Goes to explain further that realism is not essential to presence. In fact, it may easily cause breaks of presence. Since the more realism, the more expectations on matching reality both in looks (or else e.g., uncanny valley) and actions. Therefore, breaking presence often and reminding participants quicker that this is temporay, fake env (even if they truly know it).
+        Besides PI and Psi, the 3rd illusion of embodiemnts which is partially related to SCs therefore PI, but also to the looks of the virtual body itself. That VB has an effect on physiological, behavrioal, attitudinal and congnitive changes.
+        Just a filler note: the study of presence has been a major study of VR research since the early 1990s.
+        Some other nice explanatory quotes: "SCs produce a massive probability of sense of place; the probability that I am in a place that i see, hear, and can touch- leading to but seperate from PI", "desktop app. cannot provide the SoP mentioned in this paper because...., immersion here refers to the objective cabailities of the system and not the subjective response." Sometimes desktop players express that they feel that the are in the game or readers say ther are in the book, nut that refers to their own attentional ability or focus + extra imagination and is not a fact: the physical existance of system immersing them and blocking them from their own reality.
+        "This discussion emphasises our distinction between “immersion” and “presence.” The “immersion” is fully under the control of the implementation. Whether a virtual character smiles back at you when you smile towards it, will have to have been programmed. The extent to which a virtual environment can meet expectations depends on prior research amongst potential participants about the critical elements that a scenario must support, and then actually programming these. Whether this investigation has been carried out or not, and then the required elements programmed into the application is a matter of fact."
+        "Then “presence” (PI and Psi) refers to how people respond to the “immersion.” As mentioned above this is not deterministic, since people have different prior experience, personalities, knowledge, and so on. We can think PI and Psi as conditional probabilities, and consider: conditional on a particular immersive configuration what are the probabilities of PI or Psi occurring? Given different immersive configurations these probabilities may change. Thus immersion sets the ground for PI and Psi."
+        "Similarly we use the terms “embodiment” to refer to the multisensory factors that provide evidence about the body—for example, it is seen as life-sized from the perspective of the eyes of that body, it moves synchronously with the person’s real movements, when something touches it the person feels this on their real body, and so on. Embodiment configurations, which are completely determined by the hardware and programming, may give rise to the illusion of body ownership. Again, this is not deterministic but provides the basis."
+        `,
+        methodologyTakeaway: `For us behavioral measure of response is non debatable (core element). Some cited studies used behavrioal and physiological data along with questonnaires to measure presence. 
+        Using behavrioal or physiological data alone is a bit dangerous for now, as there are no considerable amount of literature consensus on how to interpret such information regarding presence. But also because they would rely on elliciting a stimulus with high arousal enough to to be detected.
+        Since a combination of measures is always better, we need to decide between subjective (exhasting) or phsyioloigcal (special hardware and expensive and needs data analysis expertise) as the second measurement method. But so far, it seems like, for our first study, it will be both behavioral, a suitable popular questionnaire that seperates PI and Psi, and sentiment analysis with reinforcement agent. 
+        Again which questionnaire should we use will rely on what i conclude from reading the paper ids 23 and 21.  
+        Does it meantion embodiement measure? as i mentioned in the notes since VB has effect on the behavrioal and conitive attitudes. Copresence not important since our study is with signle user.
+        Forsentiment analysis as a measure of user preference, and if so, how to implement it effectively? the paper gives some guideliens and citations to some study doing it (Liu, 2012) and (Bakshi et al., 2016).
+        Although PI might be the default state, low Plausibility might also be default. PI is just part of what VR is (even though it can fail). However, Psi requires deliberate design: how can a scenario be designed and implemented so that participants buy into it? This does not necessarily involve photorealism, nor realism in the sense that the scenario might not be anything that can happen in real life.
+        Since Psi (design choice) is hard to implement due to the many options of how objects and things behave plausability to real life and their relation to expectations and peoples backgrounds and demographics etc. We can rate our own developed scene in terms of Psi or make participants in a seperate study do that and develop a framework for plausible scenes. 
+        He talks more about coherence here and the 3 factors that it to give Psi which are important to get back to. 
+        `
+    },
+    {
         id: 7,
         title: "How immersive is enough? A meta-analysis of the effect of immersive technology on user presence",
         authors: "Cummings, J. J., Bailenson, J. N.",
@@ -135,7 +176,7 @@ const literatureDatabase = [
         publisher: "Taylor & Francis",
         doi: "",
         link: "",
-        tags: ["presence", "immersion"],
+        tags: ["immersion", "meta-analysis", "presence", "presence-measure-questionnaires", "visual-fov", "visual-image-quality", "visual-stereoscopy", "tracking", "visual-update-rate", "audio-type", "user-perspective"],
         notes: `They test the assumption of "immersion leads to presence" or "the higher the degree of immersion the higher the presence" by conducting a meta-analysis of 83 studies that manipulated immersion features (e.g., tracking level, update rate, image quality, field of view, sound, user perspective, etc) and measured presence (self-reported questionnaires).
         In essence, the meta-analysis meticulously converts diverse study findings related to presence (on immersion features/external variables manipulations) into a common, standardized metric (r), transforms and weights them to account for sample size, and then aggregates these to provide an overall effect size and its confidence interval, offering a comprehensive statistical summary of the evidence
         The theoratical model of presence used here is that of (Writh et al., 2007), it's focused on spactial presence. A model that understand presence as a two step process: in which the user first constructs a spatialized mental model of the mediated environment (e.g.,ascertains that the environment is a space) and then comes to accept this mediated environment over grounded reality as his or her primary frame of self-reference (e.g., ascertains that he or she is situated within that space). Completing this second step is thought to result in the experience of spatial presence, a two-dimensional construct construed in terms of perceived self-location and perceived possibilities to act within the environment at hand.
@@ -160,29 +201,6 @@ const literatureDatabase = [
         One other limitation of this study is that it compares studies involving technololgies that change and improve over time.... "it might make it more difficult to identify an exact threshold level at which a given immersive feature is enough or its effect plateaus." 
         so its important to acknowledge clearly the date of this meta analysis when mentioning. 
         Also due to some restrictions they had to follow for the sake of teh meta analsysis, behavioral measure of presence were not examined (need to look for an existing study but i doubt it exsists, perhabs the use of plume as a consistent measuement tool, use of a standard 3D enviornemnt profiling tool (3D scene), and potentially standarized response eliciting scenes could help in teh future because otherwise we see what we saw here, read future direction in last paragraph p. 28). Also due to that potential interesting manipulations of immersion were not included in this study.
-        `
-    },
-    {
-        id: 6,
-        title: "A separate reality: An update on place illusion and plausibility in virtual reality",
-        authors: "Slater, M., Banakou, D., Beacco, A., Gallego, J., Macia-Varela, F., Oliva, R.",
-        year: 2022,
-        publisher: "Frontiers Media SA",
-        doi: "",
-        link: "https://www.frontiersin.org/journals/virtual-reality/articles/10.3389/frvir.2022.914392/full",
-        tags: ["presence", "embodiment", "copresence"],
-        notes: `Slater clarifies factors to presence by seperating it into two: the place illusion (PI) and plausability illusion (Psi).
-        He also talks about Embodiment (the next node in our tree) as the illusion of ownership over thr virtual body.
-        A 4th illusion is Copresence which is the belief of being together with other people in teh virtual enviornment.
-        So, to summerize so far: Presence (PI and Psi), Embodiment, and Copresence.
-        Then he gives us a nice overview of the diverse methods to measuing Presence, obviously either through subjective (questionnaires) or objective (physiological, behavioral) measures, and the importance of using both.
-        He also says says the measuiring presence is not the only way assess the user's response to virtual reality experience, and therefore proposes the idea of taking participants preference instead through what he calls "sentiment analysis"'
-        Point out also the plausability is the most complex and interesting illusion which we should pay attention to.`,
-        methodologyTakeaway: `For us behavioral measure of response is non debatable (core element). As for measure presence, do they mention a method using behavioral data?
-        Since a combination of measures is always better, we need to decide between subjective (exhasting) or phsyioloigcal (special hardware and expensive and needs data analysis expertise) as the second measurement method.
-        If we opt for subjective, which questionnaire should we use? Which one is the most used and validated? that includes both illusions (Psi and Pi). 
-        Does it meantion embodiement measure? Copresence not important since our study is with signle user.
-        Decide whether to include sentiment analysis as a measure of user preference, and if so, how to implement it effectively?
         `
     },
     {
@@ -227,9 +245,9 @@ const literatureDatabase = [
         publisher: "IEEE",
         doi: "",
         link: "",
-        tags: ["presence", "reality-judgment"],
-        notes: `They reinforce my initial understanding before even reading the literature that when one experineces a perfect VR envronment (or as they say "PI and Psi" and therefore presence), one should also respond realisticly to stimuli from teh virtual scenario.
-        In the literature, any works examining the system characteristics or its SCs would be on immersion and therefore PI, but when it comes to Psi which seems less studies and mastered, in the literature we will encounter "coherence" which refers to the factors contributing to Psi (Skarbez, 2015)
+        tags: ["presence", "reality-judgment", "presence-measure-questionnaires"],
+        notes: `They reinforce my initial understanding before even reading the literature that when one experineces a perfect VR envronment (or as they say "PI and Psi" and therefore presence), one should also respond realisticly to stimuli from the virtual scenario.
+        In the literature, any works examining the system characteristics or its SCs would be on immersion and therefore leading to PI, but when it comes to Psi which seems less studies and mastered, in the literature we will encounter "coherence" which refers to the factors contributing to Psi (Skarbez, 2015)
         Broadly, system characteristics that contribute to Psi are: behavior of vistual humans in the enviornment, behavior of physical objects in the environment, and the like. 
         Rovira et al., in 2009 also, say that an env. must satisfy three reqs: (1) It must be correlational (the actions of the user elicit responses from the env.), (2) It must be self-referential (there must be elements of the scenario that refer directly to the user), (3) It must be credibile (the. behavior of the env. must be consistent with the user's prior knowledge).
         The experiment wentr as follows": participants were placed in the system configuration with the highest level of immersion, instrtucted to remember their feeling of Psi, and then match whichever feeling they were instructed to remember by choosing transitions from lower-to-higher quality congigurations.
@@ -369,6 +387,42 @@ const literatureDatabase = [
         doi: "",
         link: "",
         tags: ["gender", "age", "spatial-ability", "env-scene-type"],
+        notes: ``,
+        methodologyTakeaway: ``
+    },
+    {
+        id: 21,
+        title: "Questionnaire Measures and Physiological Correlates of Presence: A Systematic Review",
+        authors: "Grassini, S., Laumann, K.",
+        year: 2020,
+        publisher: "Frontiers in Psychology",
+        doi: "",
+        link: "",
+        tags: ["presence", "systematic-review", "presence-measure-questionnaires", "presence-measure-physiological"],
+        notes: ``,
+        methodologyTakeaway: ``
+    },
+    {
+        id: 22,
+        title: "Being present in a real or virtual world: A EEG study",
+        authors: "Petukhov, I. V., Glazyrin, A. E., Gorokhov, A. V., Steshina, L. A., Tanryverdiev, I. O.",
+        year: 2020,
+        publisher: "International Journal of Medical Informatics",
+        doi: "10.1016/j.ijmedinf.2019.103977",
+        link: "",
+        tags: ["presence", "presence-measure-physiological", "eeg"],
+        notes: ``,
+        methodologyTakeaway: ``
+    },
+    {
+        id: 23,
+        title: "Measuring presence in virtual environments: A survey",
+        authors: "Souza, V., Maciel, A., Nedel, L., Kopper, R.",
+        year: 2021,
+        publisher: "ACM Computing Surveys (CSUR)",
+        doi: "",
+        link: "",
+        tags: ["presence", "literature-review", "presence-measure-questionnaires", "presence-measure-physiological"],
         notes: ``,
         methodologyTakeaway: ``
     },

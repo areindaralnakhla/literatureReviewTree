@@ -35,7 +35,17 @@ class LiteratureTimeline {
             'approach-avoidance',
             'flow',
             'psychological-activation',
-            'anxiety-disorders'
+            'anxiety-disorders',
+            'presence-measure-questionnaires',
+            'presence-measure-behavioral',
+            'meta-analysis',
+            'systematic-review',
+            'literature-review',
+            'tracking',
+            'visual-update-rate',
+            'visual-fov',
+            'visual-image-quality',
+            'visual-stereoscopy'
         ]);
 
         if (!this.view || !this.content) {

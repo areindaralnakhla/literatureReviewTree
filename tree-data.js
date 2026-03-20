@@ -18,12 +18,17 @@ const treeData = {
                             label: 'Visual',
                             info: 'Display-related hardware specifications that affect visual perception.',
                             children: [
-                                { id: 'visual-resolution', label: 'Display\nresolution', info: 'Pixel density per eye.' },
+                                { id: 'visual-update-rate', label: 'Update\nrate', info: 'Display refresh rate in Hz and temporal update consistency.' },
                                 { id: 'visual-fov', label: 'Field of\nview (FOV)', info: 'The horizontal and vertical viewing angles available in the VR display.' },
-                                { id: 'visual-color', label: 'Color gamut\nspecs', info: 'Color accuracy, gamut coverage, and display color space.' },
-                                { id: 'visual-nature', label: 'Standalone\ntethered', info: 'Whether the headset is wireless/standalone or tethered.' },
+                                { id: 'visual-image-quality', label: 'Image\nquality', info: 'Sharpness, contrast, color fidelity, and rendering clarity perceived by the user.' },
+                                { id: 'visual-stereoscopy', label: 'Stereoscopy', info: 'Binocular depth rendering and quality of stereoscopic perception.' },
                                 { id: 'visual-latency', label: 'Latency', info: 'End-to-end motion-to-photon latency affecting motion sickness.' }
                             ]
+                        },
+                        {
+                            id: 'tracking',
+                            label: 'Tracking',
+                            info: 'Head/body/controller tracking reliability, precision, and drift behavior in VR systems.'
                         },
                         {
                             id: 'audio',
@@ -31,9 +36,7 @@ const treeData = {
                             info: 'Sound delivery hardware affecting auditory perception in VR.',
                             children: [
                                 { id: 'audio-type', label: 'Speaker\ntype', info: 'Built-in speakers, headphones, bone conduction, or spatial audio system.' },
-                                { id: 'audio-placement', label: 'Placement', info: 'Speaker location relative to the head (e.g., near ears, front-facing).' },
                                 { id: 'audio-quality', label: 'Quality\nspecs', info: 'Frequency response, distortion levels, and audio fidelity.' },
-                                { id: 'audio-intensity', label: 'Intensity', info: 'Intensity or strength of audio feedback.' },
                                 { id: 'audio-latency', label: 'Latency', info: 'Audio delay relative to visual and interaction events.' }
                             ]
                         },
@@ -158,7 +161,7 @@ const treeData = {
                             children: [
                                 { id: 'task-type', label: 'Task type', info: 'Type of task (passive observation, active interaction, etc.).' },
                                 { id: 'game-mechanics', label: 'Game\nmechanics', info: 'Rules and interactive systems that structure play (e.g., goals/objectives, scoring, rewards/penalties, levels, time pressure, and win/loss conditions).' },
-                                { id: 'task-perspective', label: 'Viewpoint\nperspective', info: 'Reference frame of experience (egocentric/first-person vs exocentric/third-person).' },
+                                { id: 'user-perspective', label: 'Viewpoint\nperspective', info: 'Reference frame of experience (egocentric/first-person vs exocentric/third-person).' },
                                 { id: 'task-duration', label: 'Trial\nduration', info: 'How long each individual trial or task block lasts.' },
                                 { id: 'task-interval', label: 'Inter-stimulus\ninterval', info: 'Time between stimulus presentations.' },
                                 { id: 'task-session', label: 'Total session\nduration', info: 'Total length of the entire VR session.' },

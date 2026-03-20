@@ -611,6 +611,40 @@ button.active {
     margin-bottom: 0;
 }
 
+.lit-image-link,
+.paper-image-link {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.lit-image,
+.paper-image {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.lit-image:hover,
+.paper-image:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(37, 99, 235, 0.2);
+}
+
+.lit-inline-image-link {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.lit-inline-image-link:hover {
+    color: #1d4ed8;
+}
+
 .no-literature {
     text-align: center;
     padding: 40px;

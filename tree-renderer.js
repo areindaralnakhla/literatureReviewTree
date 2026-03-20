@@ -91,22 +91,25 @@ class TreeDiagram {
         const timelineBtn = document.getElementById('timelineBtn');
         if (timelineBtn && container && timelineView) {
             timelineBtn.addEventListener('click', () => {
-                const showTimeline = timelineView.classList.contains('hidden');
+                const shouldShowTimeline = timelineView.classList.contains('hidden');
 
-                timelineView.classList.toggle('hidden', !showTimeline);
-                timelineView.style.display = showTimeline ? 'block' : 'none';
+                timelineView.classList.toggle('hidden', !shouldShowTimeline);
+                timelineView.style.display = shouldShowTimeline ? 'block' : 'none';
+                container.style.display = shouldShowTimeline ? 'none' : 'block';
 
-                container.style.display = showTimeline ? 'none' : 'block';
+                timelineBtn.classList.toggle('active', shouldShowTimeline);
 
-                timelineBtn.classList.toggle('active', showTimeline);
-
-                // Reset literature mode button when leaving tree view
-                if (showTimeline && toggleBtn) {
+                // Disable literature mode when leaving tree view
+                if (shouldShowTimeline && toggleBtn) {
                     this.literatureMode = false;
                     toggleBtn.classList.remove('active');
                 }
 
-                if (!showTimeline) {
+                if (shouldShowTimeline && window.timelineRenderer?.render) {
+                    window.timelineRenderer.render();
+                }
+
+                if (!shouldShowTimeline) {
                     this.render();
                     this.updateZoomLevel();
                 }
@@ -572,15 +575,15 @@ class TreeDiagram {
                     badge.textContent = tag;
                     tags.appendChild(badge);
                 });
-                
+
                 entry.appendChild(title);
                 entry.appendChild(citation);
                 entry.appendChild(tags);
-                
+
                 if (lit.notes) {
                     const notes = document.createElement('div');
                     notes.className = 'lit-notes';
-                    notes.textContent = lit.notes;
+                    this.appendTextWithImageLinks(notes, lit.notes, lit);
                     entry.appendChild(notes);
                 }
 
@@ -604,7 +607,7 @@ class TreeDiagram {
 
                     takeawayItems.forEach(itemText => {
                         const item = document.createElement('li');
-                        item.textContent = itemText;
+                        this.appendTextWithImageLinks(item, itemText, lit);
                         takeawayList.appendChild(item);
                     });
 
@@ -621,6 +624,89 @@ class TreeDiagram {
         
         // Show overlay
         overlay.classList.add('visible');
+    }
+
+    // Convert bracketed references in text to clickable links using paper-level image metadata.
+    appendTextWithImageLinks(container, text, literature) {
+        const source = String(text ?? '');
+        const pattern = /\[([^\]]+)\]/g;
+        let lastIndex = 0;
+        let match;
+        let occurrenceIndex = 0;
+
+        while ((match = pattern.exec(source)) !== null) {
+            if (match.index > lastIndex) {
+                container.appendChild(document.createTextNode(source.slice(lastIndex, match.index)));
+            }
+
+            const bracketText = match[1];
+            const imageUrl = this.resolveInlineImageUrl(literature, bracketText, occurrenceIndex);
+            const shouldLinkToImage = Boolean(imageUrl);
+
+            if (shouldLinkToImage) {
+                const link = document.createElement('a');
+                link.className = 'lit-inline-image-link';
+                link.href = imageUrl;
+                link.target = '_blank';
+                link.rel = 'noopener noreferrer';
+                link.textContent = `[${bracketText}]`;
+                container.appendChild(link);
+            } else {
+                container.appendChild(document.createTextNode(match[0]));
+            }
+
+            lastIndex = pattern.lastIndex;
+            occurrenceIndex += 1;
+        }
+
+        if (lastIndex < source.length) {
+            container.appendChild(document.createTextNode(source.slice(lastIndex)));
+        }
+    }
+
+    // Resolve an inline image URL using imageLinks map, images array, then single image fallback.
+    resolveInlineImageUrl(literature, bracketText, occurrenceIndex) {
+        if (!literature) return '';
+
+        const key = String(bracketText || '').trim();
+        const keyLower = key.toLowerCase();
+
+        // Preferred format: imageLinks object, e.g. { table: '...', figure2: '...' }
+        if (literature.imageLinks && typeof literature.imageLinks === 'object') {
+            if (typeof literature.imageLinks[key] === 'string') {
+                return literature.imageLinks[key];
+            }
+
+            const matchedKey = Object.keys(literature.imageLinks).find(
+                k => k.toLowerCase() === keyLower
+            );
+            if (matchedKey && typeof literature.imageLinks[matchedKey] === 'string') {
+                return literature.imageLinks[matchedKey];
+            }
+        }
+
+        // Alternate format: images array (string URLs by order, or {label,url} objects)
+        if (Array.isArray(literature.images)) {
+            const labeled = literature.images.find(img =>
+                img &&
+                typeof img === 'object' &&
+                typeof img.label === 'string' &&
+                img.label.toLowerCase() === keyLower &&
+                typeof img.url === 'string'
+            );
+            if (labeled) return labeled.url;
+
+            const byOrder = literature.images[occurrenceIndex];
+            if (typeof byOrder === 'string') return byOrder;
+            if (byOrder && typeof byOrder === 'object' && typeof byOrder.url === 'string') return byOrder.url;
+        }
+
+        // Backward compatibility: single image URL used for all bracketed links
+        if (typeof literature.image === 'string') {
+            return literature.image;
+        }
+
+        return '';
     }
 }
 
