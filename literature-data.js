@@ -148,7 +148,7 @@ const literatureDatabase = [
         Using questionnaires alone has many problems mentioned in page 5; mainly that they may bring about the very feelings that it is supposed to measure.
         The last doesnt really have to be a measure of presence alone, since presence is not the only way assess the user's response to virtual reality experience, and therefore proposes the idea of taking participants preference instead through what he calls "sentiment analysis", this is important because we dont have to enforce our own definitions as researchers on participants who have no idea about the terms we use in questionnaires and what they entail.
         Point out also the plausability is the most complex and interesting illusion which we should pay attention to.
-        To make Psi slightly more feasible to implement and approachm they introdcue the term "Coherence", see paper id 10. Coherence describes some of the factors that go into producing Psi.
+        To make Psi slightly more feasible to implement and approachm they introdcue the term "Coherence", see paper id 11. Coherence describes some of the factors that go into producing Psi.
         Goes to explain further that realism is not essential to presence. In fact, it may easily cause breaks of presence. Since the more realism, the more expectations on matching reality both in looks (or else e.g., uncanny valley) and actions. Therefore, breaking presence often and reminding participants quicker that this is temporay, fake env (even if they truly know it).
         Besides PI and Psi, the 3rd illusion of embodiemnts which is partially related to SCs therefore PI, but also to the looks of the virtual body itself. That VB has an effect on physiological, behavrioal, attitudinal and congnitive changes.
         Just a filler note: the study of presence has been a major study of VR research since the early 1990s.
@@ -160,7 +160,7 @@ const literatureDatabase = [
         methodologyTakeaway: `For us behavioral measure of response is non debatable (core element). Some cited studies used behavrioal and physiological data along with questonnaires to measure presence. 
         Using behavrioal or physiological data alone is a bit dangerous for now, as there are no considerable amount of literature consensus on how to interpret such information regarding presence. But also because they would rely on elliciting a stimulus with high arousal enough to to be detected.
         Since a combination of measures is always better, we need to decide between subjective (exhasting) or phsyioloigcal (special hardware and expensive and needs data analysis expertise) as the second measurement method. But so far, it seems like, for our first study, it will be both behavioral, a suitable popular questionnaire that seperates PI and Psi, and sentiment analysis with reinforcement agent. 
-        Again which questionnaire should we use will rely on what i conclude from reading the paper ids 23 and 21.  
+        Again which questionnaire should we use will rely on what i conclude from reading the paper ids 24 and 22.  
         Does it meantion embodiement measure? as i mentioned in the notes since VB has effect on the behavrioal and conitive attitudes. Copresence not important since our study is with signle user.
         Forsentiment analysis as a measure of user preference, and if so, how to implement it effectively? the paper gives some guideliens and citations to some study doing it (Liu, 2012) and (Bakshi et al., 2016).
         Although PI might be the default state, low Plausibility might also be default. PI is just part of what VR is (even though it can fail). However, Psi requires deliberate design: how can a scenario be designed and implemented so that participants buy into it? This does not necessarily involve photorealism, nor realism in the sense that the scenario might not be anything that can happen in real life.
@@ -227,6 +227,39 @@ const literatureDatabase = [
     },
     {
         id: 9,
+        title: "Unified concepts: a review and proposal for virtual reality terminology",
+        authors: "Gon\u00e7alves, G., Peixoto, B., Melo, M., Bessa, M.",
+        year: 2025,
+        publisher: "Springer",
+        doi: "",
+        link: "",
+        tags: ["literature-review", "presence", "immersion"],
+        notes: `This paper comes to address the need for unified terminology in virtual reality research. They target Fiedality, Realism, Immersion, Presence and its derivatives, and Coherence. Attempting to expose the inconsistencies of definitions of these terms or having other terms to describe teh same context. It's not a literature review, but more of selective work in this context. Relating to their main argument that because the terminology in the literature is so unstable, its hard to do comparative work like review and meta-analysis
+        They also offer their own theoritical unification of these terms
+        For the first: Fidelity. There are so many definitions in the literature and some works introduce many subsets of it relating to specific actions (physical; interaction; display; perceptual; visual fidelity). I think, in a nutshel, the concept "fidelity" can be applied to any of those and more, its a mode of evaluation of something to say how good enough it is to a real counterpart. Therefore the fidelity term often appears with "referent": the representation of the real-world object/system/phenomenon that a simulation aims to reproduce. Referents can be normative: deemed suitable and acceptable for the specific context, or authoritative: has to be aggreed own by the field/community as a baseline. 
+        Though Fidelity is often confused with realism. It shouldn't be the case because realism can be subjetcive and objective. Fidelity is required to be as objective as possible. Though, VR is not solely a repliction of reality, its imaginary and could aim for science fiction; in that case teh fidelity concept still applies, and doesnt completely go away, to whatever elements present that are based on reality.
+        Onjective Realism can be absolute (evaluate against real world counterpar aka referent (in this case similar to fidelity) or relative (compare against another simulated system and judge which one is more realistic). Subjective Realism is dictated by the user's  perception (sensation that it feels real) and by cognitive (is this real?). And those are just different among people, therefore it depends on the extent to which the users' expectations are met and hoe they percieve the experience as realistic, which could be due to factors such as coherence.
+        For immersion, it exposes that it's been seen in the literature as both a property of the system (objective) and as a subjective response to the system. The former is more commonly used in the literature, but the latter is also used. They propose that immersion should be considered as an objective property of the system, and that the subjective response to it should be called "presence". This is important because it allows for a clearer distinction between the two concepts and allows for more precise research and discussion in the field.
+        As for Coherenece, they refernece Skarbez only since he's the one to introduce the term. In the dictionary, coherence is defined as "the quality of being logical and consistent". In the context of VR, it refers to the characteristics of the virtual scenario; in other words, it is teh extent to which the virtual experience behaves predictably. It doesnt make any assumptions that the VE is trying to replicate relaity. Instead, it defines the internal logic and behaviroal consistency of teh virtual experience. Coherence could be considered a superset of Realism and Fidelity. But as long as its running over its own world's rules and not necessarily that of the real world alone. Therefore the key word here is logic and consistency.
+        Important destinction: coherene is sort of a prerequisite for Psi; whereas Psi is a mental state/an illusion, Coherebce us a characteristic of the virtual experienece. While "Coherence seems to be objective, in reality there can be a subjective influence, Although we cannot control the user's previous experiences, we can manipulate expectations by priming users into expecting some behavrios, reducing the dependency on assumptions made by them due to their prior knowledge in how reality works" 
+        "Presence is a perceptual illusion that elicits the sense of being there. Together with Psi, it forms the foundation for harnessing the immense potential of immersive VR -> realitic behavior"
+
+        `,
+        methodologyTakeaway: `"are Realism and Fidelity the same? Fidelity is frequently described as an objective measure, either by comparing it to a referent or by quantifying the number of shared elements between the VR simulation and its intended real-world counterpart. Therefore, it could be argued that the overlap between Fidelity and Realism primarily pertains to the relationship between Fidelity and Objective Realism"
+        "The term perception to refer to the brain’s process of interpreting raw sensory input from different senses to form a meaningful and immediate experience that typically arises spontaneously and involuntarily. It is the initial interpretation of stimuli, occurring prior to higher-level processing."
+        "In contrast, the term cognition refers to higher-level mental processes, whether deliberate or automatic, such as reasoning, memory, and judgment. Cognition involves evaluating what is perceived, often by relating it to prior knowledge and expectations"
+        "Both perception and cognition are shaped by an individual’s past experiences, memory, emotional state, cultural background, and cognitive biases. Thus, when we say that something was “judged” to be realistic or coherent, we refer to a process involving both perceptual and cognitive components."
+        It's argued to keep immersion in the objective category relating to the system's characteristics because the subjective dimension of immersion mentioned in the literature is already in the concept of presence. Since this sefinition represents the potential of a given system; thus, it is insufficient to represent the actual Immerson of an experience.
+        For an immersive system to be meaningful in terms of human perception, it necessitates Virtual Content; something that requires stimuli to be percieved. The visual system, being the sense that we mostly reply on, proivdes the majority of the context that justifies vwhether other stimuli should exist 
+        "By definition, it would be a "good" immersive system (due to its potential) but bit not a so-good "immersive" experience. The way Virtual Content is set up to take advantage of the provided immersive system will describe the full extent to which one can be immersed in that system.
+        Goes then to explain why fidelity term should be objective, to seperate it from both subjective realism but also Objective Internal coherence which is deisgend to assess the logical consistency of a avirtual world with its own rules, whether realistic or fantastical. 
+        Fidelity requires both appropriate Virtual Context and system capabilities to simulate aspects of reality..
+        "In essence, our body reacts first and asks questions later"
+
+        `
+    },
+    {
+        id: 10,
         title: "The relationship between individual characteristics and experienced presence",
         authors: "Ling, Y., Nefs, H. T., Brinkman, W.-P., Qu, C., Heynderickx, I.",
         year: 2013,
@@ -238,7 +271,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 10,
+        id: 11,
         title: "A psychophysical experiment regarding components of the plausibility illusion",
         authors: "Skarbez, R., Neyret, S., Brooks, F. P., Slater, M., Whitton, M. C.",
         year: 2017,
@@ -271,7 +304,7 @@ const literatureDatabase = [
         `
     },
     {
-        id: 11,
+        id: 12,
         title: "Psychological variables and reality judgment in virtual environments: the roles of absorption and dissociation",
         authors: "Baños, R., Botella, C., Garcia-Palacios, A., Villa, H., Perpiñá, C., Gallardo, M.",
         year: 1999,
@@ -283,7 +316,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 12,
+        id: 13,
         title: "Presence equation: An investigation into cognitive factors underlying presence",
         authors: "Sas, C., O'Hare, G. M. P.",
         year: 2003,
@@ -295,7 +328,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 13,
+        id: 14,
         title: "The impact of personality factors on the experience of spatial presence",
         authors: "Sacau, A., Laarni, J., Ravaja, N., Hartmann, T.",
         year: 2005,
@@ -307,7 +340,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 14,
+        id: 15,
         title: "Personality and presence in virtual reality: Does their relationship depend on the used presence measure?",
         authors: "Kober, S. E., Neuper, C.",
         year: 2013,
@@ -319,7 +352,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 15,
+        id: 16,
         title: "Absorption, dissociation, locus of control and presence in virtual reality",
         authors: "Murray, C. D., Fox, J., Pettifer, S.",
         year: 2007,
@@ -331,7 +364,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 16,
+        id: 17,
         title: "Individual differences in the sense of presence",
         authors: "Jurnet, I. A., Beciu, C. C., Maldonado, J. G.",
         year: 2005,
@@ -343,7 +376,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 17,
+        id: 18,
         title: "Personality-related differences in subjective presence",
         authors: "Laarni, J., Ravaja, N., Saari, T., Hartmann, T.",
         year: 2004,
@@ -355,7 +388,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 18,
+        id: 19,
         title: "Immersion in mediated environments: The role of personality traits",
         authors: "Weibel, D., Wissmath, B., Mast, F. W.",
         year: 2010,
@@ -367,7 +400,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 19,
+        id: 20,
         title: "Experienced presence within computer-mediated communications: Initial explorations on the effects of gender with respect to empathy and immersion",
         authors: "Nicovich, S. G., Boller, G. W., Cornwell, T. B.",
         year: 2005,
@@ -379,7 +412,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 20,
+        id: 21,
         title: "Peripersonal and interpersonal space in virtual and real environments: Effects of gender and age",
         authors: "Iachini, T., Coello, Y., Frassinetti, F., Senese, V. P., Galante, F., Ruggiero, G.",
         year: 2016,
@@ -391,7 +424,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 21,
+        id: 22,
         title: "Questionnaire Measures and Physiological Correlates of Presence: A Systematic Review",
         authors: "Grassini, S., Laumann, K.",
         year: 2020,
@@ -403,7 +436,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 22,
+        id: 23,
         title: "Being present in a real or virtual world: A EEG study",
         authors: "Petukhov, I. V., Glazyrin, A. E., Gorokhov, A. V., Steshina, L. A., Tanryverdiev, I. O.",
         year: 2020,
@@ -415,7 +448,7 @@ const literatureDatabase = [
         methodologyTakeaway: ``
     },
     {
-        id: 23,
+        id: 24,
         title: "Measuring presence in virtual environments: A survey",
         authors: "Souza, V., Maciel, A., Nedel, L., Kopper, R.",
         year: 2021,
